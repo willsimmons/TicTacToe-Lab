@@ -1,0 +1,11 @@
+img{
+	height: 180px;
+	width: 180px;
+}
+ul{
+	list-style-type: none;
+
+}
+li{
+	display: inline;
+}
