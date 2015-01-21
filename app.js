@@ -9,7 +9,7 @@ window.addEventListener("load",function()
     function doStuff(event) {  
         //event target =which square is clicked
         //event.target.className = "x or y";
-        if (moveCounter<=9){
+        if (moveCounter<=9){    //refactor into a move X, O function
         if (moveCounter % 2 === 0 ){  //o moves
           if (winState===true)  //in case the game has already ended (1/2st half of move checker)
            {
@@ -23,8 +23,8 @@ window.addEventListener("load",function()
             }
           event.target.setAttribute("src", "./images/o.jpeg");
           event.target.setAttribute("className", "o");
-          oMoves[event.target.id]=Number(event.target.id); //forcing a number into the array
-          hasWinner(oMoves,"O");
+          oMoves[event.target.id]=Number(event.target.id); //forcing a number into the array (use parseInt?)
+          hasWinner(oMoves,"O");                           //just use push 
           console.log(oMoves);
         }
         else{ //xmoves
@@ -40,7 +40,7 @@ window.addEventListener("load",function()
             }
           event.target.setAttribute("src", "./images/x.png");
           event.target.setAttribute("className", "x");
-          xMoves[event.target.id]=Number(event.target.id); //forcing a number into the array
+          xMoves[event.target.id]=Number(event.target.id); //forcing a number into the array, does not have to be at a specific spot, just push
           hasWinner(xMoves,"X");
           console.log(xMoves);
         } 
@@ -62,7 +62,7 @@ window.addEventListener("load",function()
     function restart(event) {   //puts everythiung back to the beginning
        originalState("0");
        originalState("1");
-       originalState("2");
+       originalState("2");  //put a loop here?
        originalState("3");
        originalState("4");
        originalState("5");
