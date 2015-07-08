@@ -59,7 +59,7 @@ window.addEventListener("load",function()
     
     reset.addEventListener('click',restart); 
     
-    function restart(event) {   //puts everythiung back to the beginning
+    function restart(event) {   //puts everything back to the beginning
        originalState("0");
        originalState("1");
        originalState("2");  //put a loop here?
